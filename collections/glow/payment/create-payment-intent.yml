@@ -1,0 +1,26 @@
+info:
+  name: Create Payment Intent
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{paymentServiceUrl}}/payments/intents"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "00000000-0000-0000-0000-000000000001",
+        "customerId": "00000000-0000-0000-0000-000000000002",
+        "amount": 15000
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

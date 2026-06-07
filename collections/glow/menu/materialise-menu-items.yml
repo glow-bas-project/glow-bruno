@@ -1,0 +1,30 @@
+info:
+  name: Materialise Menu Items
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{menuServiceUrl}}/menu-items/materialise"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "ids": [
+          "{{id}}"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

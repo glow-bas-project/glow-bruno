@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: check-sanitize-filter-installed
+        name: Git sanitize filter must be installed
+        entry: .githooks/check-filter-installed.sh
+        language: script
+        always_run: true
+        pass_filenames: false
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: block-dotenv
+        name: Block .env files
+        entry: .env files must not be committed.
+        language: fail
+        files: (^|/)\.env(\..+)?$

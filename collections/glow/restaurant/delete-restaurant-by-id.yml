@@ -1,0 +1,15 @@
+info:
+  name: Delete Restaurant by ID
+  type: http
+  seq: 6
+http:
+  method: DELETE
+  url: "{{restaurantServiceUrl}}/restaurants/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit

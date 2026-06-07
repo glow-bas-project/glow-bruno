@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "Glow"
+  type: workspace
+
+collections:
+  - name: "glow"
+    path: "collections/glow"
+
+specs:
+
+docs: ''

@@ -1,0 +1,15 @@
+info:
+  name: List Menu Items by Restaurant
+  type: http
+  seq: 4
+http:
+  method: GET
+  url: "{{menuServiceUrl}}/menu-items/restaurant/:restaurantId"
+  params:
+    - name: restaurantId
+      value: ""
+      type: path
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit

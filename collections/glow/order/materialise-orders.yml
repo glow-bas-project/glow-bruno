@@ -1,0 +1,30 @@
+info:
+  name: Materialise Orders
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{orderServiceUrl}}/materialise"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "ids": [
+          "{{id}}"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
