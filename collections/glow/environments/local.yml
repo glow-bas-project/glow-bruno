@@ -1,0 +1,26 @@
+name: local
+variables:
+  - name: baseUrl
+    value: http://localhost
+  - name: restaurantServiceUrl
+    value: "{{baseUrl}}/restaurant"
+  - name: userServiceUrl
+    value: "{{baseUrl}}/user"
+  - name: orderServiceUrl
+    value: "{{baseUrl}}/order"
+  - name: cartServiceUrl
+    value: "{{baseUrl}}/cart"
+  - name: courierServiceUrl
+    value: "{{baseUrl}}/courier"
+  - name: paymentServiceUrl
+    value: "{{baseUrl}}/payment"
+  - name: menuServiceUrl
+    value: "{{baseUrl}}/menu"
+  - name: authServerUrl
+    value: http://auth.localhost
+  - name: realm
+    value: glow-realm
+  - name: oauthClientId
+    value: glow-frontend
+  - name: username
+    value: ""

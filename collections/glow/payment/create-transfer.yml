@@ -1,0 +1,30 @@
+info:
+  name: Create Transfer
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{paymentServiceUrl}}/payments/:paymentId/transfers"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: paymentId
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "amount": 10000,
+        "recipientType": "RESTAURANT",
+        "recipientAccountId": "acct_demo_restaurant"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,33 @@
+info:
+  name: Create Menu Item
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{menuServiceUrl}}/menu-items"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "restaurantId": "",
+        "name": "Demo Burger",
+        "description": "Classic demo burger",
+        "price": 9900,
+        "category": "BURGER",
+        "ingredients": [
+          "beef",
+          "bun",
+          "cheese"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

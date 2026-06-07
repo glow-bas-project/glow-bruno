@@ -1,0 +1,32 @@
+info:
+  name: Sync Profile
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{userServiceUrl}}/sync-profile"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Demo Customer",
+        "phoneNumber": "+45 12 34 56 78",
+        "permissions": [
+          "CUSTOMER"
+        ],
+        "savedAddresses": [],
+        "vehicleType": null,
+        "courierAvailability": null,
+        "restaurantId": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

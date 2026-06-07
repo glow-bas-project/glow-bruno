@@ -1,0 +1,38 @@
+opencollection: 1.0.0
+
+info:
+  name: glow
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: oauth2
+    flow: resource_owner_password_credentials
+    accessTokenUrl: "{{authServerUrl}}/realms/{{realm}}/protocol/openid-connect/token"
+    credentials:
+      clientId: "{{oauthClientId}}"
+      placement: body
+    resourceOwner:
+      username: "{{username}}"
+      password: "{{password}}"
+    tokenConfig:
+      placement:
+        header: Bearer
+    settings:
+      autoFetchToken: true
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

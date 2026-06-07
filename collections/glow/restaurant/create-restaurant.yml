@@ -1,0 +1,46 @@
+info:
+  name: Create Restaurant
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{restaurantServiceUrl}}/restaurants"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Demo Restaurant",
+        "phoneNumber": "+45 12 34 56 78",
+        "address": {
+          "address": "Nørrebrogade 1",
+          "city": "Copenhagen",
+          "country": "Denmark",
+          "longitude": 12.5683,
+          "latitude": 55.6867
+        },
+        "openingHours": {
+          "dailyOpeningHours": [
+            {
+              "dayOfWeek": "MONDAY",
+              "timeRanges": [
+                {
+                  "open": "11:00:00",
+                  "close": "22:00:00"
+                }
+              ],
+              "closed": false
+            }
+          ]
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

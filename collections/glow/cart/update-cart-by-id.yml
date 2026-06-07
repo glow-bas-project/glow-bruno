@@ -1,0 +1,28 @@
+info:
+  name: Update Cart by ID
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{cartServiceUrl}}/carts/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "totalPrice": 15000
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

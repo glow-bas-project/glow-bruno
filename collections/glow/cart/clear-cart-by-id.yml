@@ -1,0 +1,12 @@
+info:
+  name: Clear Cart by ID
+  type: http
+  seq: 5
+http:
+  method: POST
+  url: "{{cartServiceUrl}}/carts/:id/clear"
+  params:
+    - name: id
+      value: ""
+      type: path
+  auth: inherit

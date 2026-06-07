@@ -1,0 +1,115 @@
+info:
+  name: "01 — Create Restaurant"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{restaurantServiceUrl}}/restaurants"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Glow Kitchen",
+        "phoneNumber": "+45 12 34 56 78",
+        "address": {
+          "address": "Nørrebrogade 1",
+          "city": "Copenhagen",
+          "country": "Denmark",
+          "longitude": 12.5683,
+          "latitude": 55.6867
+        },
+        "openingHours": {
+          "dailyOpeningHours": [
+            {
+              "dayOfWeek": "MONDAY",
+              "timeRanges": [
+                {
+                  "open": "11:00:00",
+                  "close": "22:00:00"
+                }
+              ],
+              "closed": false
+            },
+            {
+              "dayOfWeek": "TUESDAY",
+              "timeRanges": [
+                {
+                  "open": "11:00:00",
+                  "close": "22:00:00"
+                }
+              ],
+              "closed": false
+            },
+            {
+              "dayOfWeek": "WEDNESDAY",
+              "timeRanges": [
+                {
+                  "open": "11:00:00",
+                  "close": "22:00:00"
+                }
+              ],
+              "closed": false
+            },
+            {
+              "dayOfWeek": "THURSDAY",
+              "timeRanges": [
+                {
+                  "open": "11:00:00",
+                  "close": "22:00:00"
+                }
+              ],
+              "closed": false
+            },
+            {
+              "dayOfWeek": "FRIDAY",
+              "timeRanges": [
+                {
+                  "open": "11:00:00",
+                  "close": "23:00:00"
+                }
+              ],
+              "closed": false
+            },
+            {
+              "dayOfWeek": "SATURDAY",
+              "timeRanges": [
+                {
+                  "open": "12:00:00",
+                  "close": "23:00:00"
+                }
+              ],
+              "closed": false
+            },
+            {
+              "dayOfWeek": "SUNDAY",
+              "timeRanges": [
+                {
+                  "open": "12:00:00",
+                  "close": "21:00:00"
+                }
+              ],
+              "closed": false
+            }
+          ]
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        bru.setVar("restaurantId", res.body.id);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs:
+  description: Creates the demo restaurant and sets `restaurantId` for menu seed steps. Assumes an empty database.

@@ -1,0 +1,33 @@
+info:
+  name: Create Courier
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{courierServiceUrl}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Demo Courier",
+        "phoneNumber": "+45 12 34 56 78",
+        "email": "demo.courier@example.com",
+        "permissions": [
+          "COURIER"
+        ],
+        "savedAddresses": [],
+        "vehicleType": "BIKE",
+        "courierAvailability": "AVAILABLE",
+        "restaurantId": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
