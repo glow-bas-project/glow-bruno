@@ -34,13 +34,13 @@ Never hardcode hosts. Use service URL variables:
 
 | Variable | Resolves to |
 |----------|-------------|
-| `restaurantServiceUrl` | `{{baseUrl}}/restaurant` |
-| `userServiceUrl` | `{{baseUrl}}/user` |
-| `orderServiceUrl` | `{{baseUrl}}/order` |
-| `cartServiceUrl` | `{{baseUrl}}/cart` |
-| `courierServiceUrl` | `{{baseUrl}}/courier` |
-| `paymentServiceUrl` | `{{baseUrl}}/payment` |
-| `menuServiceUrl` | `{{baseUrl}}/menu` |
+| `restaurantServiceUrl` | `{{baseUrl}}/api/restaurant` |
+| `userServiceUrl` | `{{baseUrl}}/api/user` |
+| `orderServiceUrl` | `{{baseUrl}}/api/order` |
+| `cartServiceUrl` | `{{baseUrl}}/api/cart` |
+| `courierServiceUrl` | `{{baseUrl}}/api/courier` |
+| `paymentServiceUrl` | `{{baseUrl}}/api/payment` |
+| `menuServiceUrl` | `{{baseUrl}}/api/menu` |
 
 `.gitignore` blocks `.env*` and `*.secrets.yml` under environments.
 
