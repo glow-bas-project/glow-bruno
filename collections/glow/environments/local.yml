@@ -3,21 +3,21 @@ variables:
   - name: baseUrl
     value: http://localhost
   - name: restaurantServiceUrl
-    value: "{{baseUrl}}/restaurant"
+    value: "{{baseUrl}}/api/restaurant"
   - name: userServiceUrl
-    value: "{{baseUrl}}/user"
+    value: "{{baseUrl}}/api/user"
   - name: orderServiceUrl
-    value: "{{baseUrl}}/order"
+    value: "{{baseUrl}}/api/order"
   - name: cartServiceUrl
-    value: "{{baseUrl}}/cart"
+    value: "{{baseUrl}}/api/cart"
   - name: courierServiceUrl
-    value: "{{baseUrl}}/courier"
+    value: "{{baseUrl}}/api/courier"
   - name: paymentServiceUrl
-    value: "{{baseUrl}}/payment"
+    value: "{{baseUrl}}/api/payment"
   - name: menuServiceUrl
-    value: "{{baseUrl}}/menu"
+    value: "{{baseUrl}}/api/menu"
   - name: authServerUrl
-    value: http://auth.localhost
+    value: http://localhost/auth
   - name: realm
     value: glow-realm
   - name: oauthClientId
