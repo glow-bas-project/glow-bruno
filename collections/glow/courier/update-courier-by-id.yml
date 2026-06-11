@@ -1,0 +1,37 @@
+info:
+  name: Update Courier by ID
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{courierServiceUrl}}/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Demo Courier",
+        "phoneNumber": "+45 12 34 56 78",
+        "email": "demo.courier@example.com",
+        "permissions": [
+          "COURIER"
+        ],
+        "savedAddresses": [],
+        "vehicleType": "BIKE",
+        "courierAvailability": "AVAILABLE",
+        "restaurantId": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

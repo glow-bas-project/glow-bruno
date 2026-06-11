@@ -1,0 +1,37 @@
+info:
+  name: "02 — Create Menu Item (Burger)"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{menuServiceUrl}}/menu-items"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "restaurantId": "{{restaurantId}}",
+        "name": "Glow Burger",
+        "description": "Classic beef burger with cheese",
+        "price": 9900,
+        "category": "BURGER",
+        "ingredients": [
+          "beef",
+          "bun",
+          "cheese",
+          "pickles"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs:
+  description: Requires **01 — Create Restaurant** first (`restaurantId` from step 1). Collection OAuth2 fetches a token when menu OIDC is enabled.

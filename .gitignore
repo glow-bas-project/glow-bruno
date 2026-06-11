@@ -1,0 +1,4 @@
+.DS_Store
+
+# Local Bruno secret overrides (never commit)
+collections/glow/environments/*.secrets.yml

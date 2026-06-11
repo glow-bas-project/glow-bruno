@@ -1,0 +1,15 @@
+info:
+  name: Delete Courier by ID
+  type: http
+  seq: 6
+http:
+  method: DELETE
+  url: "{{courierServiceUrl}}/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit

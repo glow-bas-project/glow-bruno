@@ -1,0 +1,28 @@
+info:
+  name: Update Courier Availability
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{courierServiceUrl}}/:id/availability"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "courierAvailability": "AVAILABLE"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,40 @@
+name: staging
+variables:
+  - name: baseUrl
+    value: https://project.orbit.au.dk/alt-2026f01/staging
+    enabled: true
+  - name: restaurantServiceUrl
+    value: "{{baseUrl}}/restaurant"
+    enabled: true
+  - name: userServiceUrl
+    value: "{{baseUrl}}/user"
+    enabled: true
+  - name: orderServiceUrl
+    value: "{{baseUrl}}/order"
+    enabled: true
+  - name: cartServiceUrl
+    value: "{{baseUrl}}/cart"
+    enabled: true
+  - name: courierServiceUrl
+    value: "{{baseUrl}}/courier"
+    enabled: true
+  - name: paymentServiceUrl
+    value: "{{baseUrl}}/payment"
+    enabled: true
+  - name: menuServiceUrl
+    value: "{{baseUrl}}/menu"
+    enabled: true
+  - name: authServerUrl
+    value: https://project.orbit.au.dk/alt-2026f01/staging/auth
+    enabled: true
+  - name: realm
+    value: glow-realm
+    enabled: true
+  - name: oauthClientId
+    value: glow-frontend
+    enabled: true
+  - name: username
+    value: ""
+    enabled: true
+  - name: password
+    secret: true

@@ -1,0 +1,37 @@
+info:
+  name: "03 — Create Menu Item (Salad)"
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{menuServiceUrl}}/menu-items"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "restaurantId": "{{restaurantId}}",
+        "name": "Glow Garden Salad",
+        "description": "Mixed greens with vinaigrette",
+        "price": 7500,
+        "category": "SALAD",
+        "ingredients": [
+          "lettuce",
+          "tomato",
+          "cucumber",
+          "vinaigrette"
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs:
+  description: Second menu item for the same restaurant. Requires **01 — Create Restaurant**.

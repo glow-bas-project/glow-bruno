@@ -1,0 +1,15 @@
+info:
+  name: Delete Menu Item by ID
+  type: http
+  seq: 7
+http:
+  method: DELETE
+  url: "{{menuServiceUrl}}/menu-items/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit

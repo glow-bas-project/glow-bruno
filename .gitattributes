@@ -1,0 +1,3 @@
+collections/glow/environments/*.yml filter=sanitize-bruno-yaml
+collections/glow/*/*.yml filter=sanitize-bruno-yaml
+collections/glow/opencollection.yml filter=sanitize-bruno-yaml

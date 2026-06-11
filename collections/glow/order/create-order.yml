@@ -1,0 +1,40 @@
+info:
+  name: Create Order
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{orderServiceUrl}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "deliveryAddress": {
+          "address": "Nørrebrogade 1",
+          "city": "Copenhagen",
+          "country": "Denmark",
+          "longitude": 12.5683,
+          "latitude": 55.6867
+        },
+        "restaurantAddress": {
+          "address": "Nørrebrogade 1",
+          "city": "Copenhagen",
+          "country": "Denmark",
+          "longitude": 12.5683,
+          "latitude": 55.6867
+        },
+        "phoneNumber": "+45 12 34 56 78",
+        "totalPrice": 15000,
+        "stripePaymentIntentId": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: Find User IDs
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{userServiceUrl}}/find"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "page": 0,
+        "size": 10
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
