@@ -4,25 +4,25 @@ variables:
     value: https://project.orbit.au.dk/alt-2026f01/staging
     enabled: true
   - name: restaurantServiceUrl
-    value: "{{baseUrl}}/restaurant"
+    value: "{{baseUrl}}/api/restaurant"
     enabled: true
   - name: userServiceUrl
-    value: "{{baseUrl}}/user"
+    value: "{{baseUrl}}/api/user"
     enabled: true
   - name: orderServiceUrl
-    value: "{{baseUrl}}/order"
+    value: "{{baseUrl}}/api/order"
     enabled: true
   - name: cartServiceUrl
-    value: "{{baseUrl}}/cart"
+    value: "{{baseUrl}}/api/cart"
     enabled: true
   - name: courierServiceUrl
-    value: "{{baseUrl}}/courier"
+    value: "{{baseUrl}}/api/courier"
     enabled: true
   - name: paymentServiceUrl
-    value: "{{baseUrl}}/payment"
+    value: "{{baseUrl}}/api/payment"
     enabled: true
   - name: menuServiceUrl
-    value: "{{baseUrl}}/menu"
+    value: "{{baseUrl}}/api/menu"
     enabled: true
   - name: authServerUrl
     value: https://project.orbit.au.dk/alt-2026f01/staging/auth
